@@ -11,12 +11,13 @@ public class StudentReader {
 
 	}
 
-	public static ArrayList<Student> read(){
+	public static ArrayList<Student> read(String filename){
+		
 		ArrayList<Student> students = new ArrayList<>();
 
 		BufferedReader br;
 		try {
-			br = new BufferedReader(new FileReader("input.txt"));
+			br = new BufferedReader(new FileReader(filename));
 			String line;
 			while ((line = br.readLine()) != null) {
 				if (line.contains(" ")){
