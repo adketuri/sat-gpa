@@ -25,8 +25,9 @@ public class Student {
 		this.sat = sat;
 	}
 
-	public String display() {
-		return "SAT Score: " + getSat() + " GPA: " + getGpa();
+	@Override
+	public String toString() {
+		return "[SAT Score: " + getSat() + " GPA: " + getGpa() + "]";
 		
 	}
 

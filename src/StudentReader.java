@@ -19,7 +19,9 @@ public class StudentReader {
 			br = new BufferedReader(new FileReader("input.txt"));
 			String line;
 			while ((line = br.readLine()) != null) {
-				students.add(new Student(getGpaFromLine(line), getSatFromLine(line)));
+				if (line.contains(" ")){
+					students.add(new Student(getGpaFromLine(line), getSatFromLine(line)));
+				}
 			}
 			br.close();
 		} catch (FileNotFoundException e) {
@@ -31,12 +33,12 @@ public class StudentReader {
 		return students;
 	}
 
-	// super hacky helper function to parse the SAT from a given line
+	// hacky helper function to parse the SAT from a given line
 	private static int getSatFromLine(String line) {
 		return Integer.parseInt(line.split(" ")[0]);
 	}
 
-	// super hacky helper function to parse the GPA from a given line
+	// hacky helper function to parse the GPA from a given line
 	private static float getGpaFromLine(String line) {
 		return Float.parseFloat(line.split(" ")[1]);
 	}

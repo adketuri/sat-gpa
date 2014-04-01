@@ -10,18 +10,19 @@ public class SatGpa {
 		ArrayList<Student> students = StudentReader.read();
 		
 		for (int i = 0; i < students.size(); i++){
-			System.out.println("STARTING WITH: " + students.get(i).display());
+			System.out.println("STARTING WITH STUDENT: " + students.get(i));
 			result.add(students.get(i));
 			findStudentWithBetterGpaAndWorseSat(students.get(i), students, result, "   ");
 			result.clear();
 			students.clear();
 			students = StudentReader.read();
 		}
-		System.out.println("Here's my answer...");
-		for (Student s : best){
-			System.out.println(s.display());
-		}
+		System.out.println("As students' SAT scores increase, their GPA drops:");
 		
+		for (Student s : best){
+			System.out.println(s);
+		}
+		System.out.println("Conclusion: SAT exams are a sham.");
 	}
 
 	private static void findStudentWithBetterGpaAndWorseSat(Student s1, ArrayList<Student> students, ArrayList<Student> result, String tab) {
@@ -29,7 +30,7 @@ public class SatGpa {
 		for (int i = 0; i < students.size(); i++){
 			final Student s2 = students.get(i);
 			if (s1 != s2 && s2.hasBetterSatAndWorseGpa(s1)){
-				System.out.println(tab + s2.display() + " fulfills requirement " + s1.display());
+				System.out.println(tab + s2 + " fulfills requirement for " + s1);
 				
 				// update our pending result list...
 				students.remove(s2);
@@ -50,10 +51,9 @@ public class SatGpa {
 				result.remove(s2);
 
 			} else {
-				System.out.println(tab + s2.display() + " does not fulfill requirement " + s1.display());
+				System.out.println(tab + s2 + " does not fulfill requirement for " + s1);
 
 			}
-			System.out.println (tab + "!!!");
 		}
 		System.out.println(tab + "=====");
 	}
