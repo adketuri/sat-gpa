@@ -1,4 +1,8 @@
-
+/**
+ * Simple representation of a student.
+ * 
+ * @author Andrew Keturi
+ */
 public class Student {
 
 	private float gpa;
