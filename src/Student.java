@@ -1,5 +1,5 @@
 
-public class Student implements Comparable<Student> {
+public class Student {
 
 	private float gpa;
 	private int sat;
@@ -7,11 +7,6 @@ public class Student implements Comparable<Student> {
 	public Student(float gpa, int sat){
 		this.setGpa(gpa);
 		this.setSat(sat);
-	}
-
-	@Override
-	public int compareTo(Student s) {
-		return 0;
 	}
 
 	public float getGpa() {
@@ -30,8 +25,13 @@ public class Student implements Comparable<Student> {
 		this.sat = sat;
 	}
 
-	public void display() {
-		System.out.println("SAT Score: " + getSat() + " GPA: " + getGpa());
+	public String display() {
+		return "SAT Score: " + getSat() + " GPA: " + getGpa();
 		
+	}
+
+	// returns true if this student compared to s2 has > GPA and < SAT
+	public boolean hasBetterSatAndWorseGpa(Student s2) {
+		return getSat() > s2.getSat() && getGpa() < s2.getGpa();
 	}
 }
