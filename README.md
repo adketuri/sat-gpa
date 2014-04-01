@@ -4,9 +4,13 @@ sat-gpa
 Calculates the longest sequence of student's SAT scores/GPA with increasing SAT scores and decreasing GPA
 
 To run, grab the jar and execute via command-line:
+
+```
 java -jar SatGpa.jar <file> [-d]
+```
 
 file: A file containing student data. See below for file specifications.
+
 -d: An optional switch. When present, debug information is display.
 
 File Structure
