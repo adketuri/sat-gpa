@@ -29,4 +29,9 @@ public class Student implements Comparable<Student> {
 	public void setSat(int sat) {
 		this.sat = sat;
 	}
+
+	public void display() {
+		System.out.println("SAT Score: " + getSat() + " GPA: " + getGpa());
+		
+	}
 }
